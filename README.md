@@ -2,7 +2,7 @@
 (c) James D. Stallard 2017
 A custom button script for Artsoft Mach3 that allows for Automatic Tool Zeroing in the Z Axis
 
-#Notes
+# Notes
 Script converts mm to inches automatically by reading your machine's native unit settings irrespective of G20/G21
 
  You MUST configure the following variables:
