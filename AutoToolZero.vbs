@@ -15,7 +15,7 @@
 '
 '--------------------------------------------------------------------------------------------------------------------
 
-intTouchPlateThickness	= 10													' Set touchplate/puck thickness in mm
+intTouchPlateThickness	= 19.2													' Set touchplate/puck thickness in mm
 
 intUnits				= GetSetupUnits()										' Autoconvert script from metric to imperial
 If intUnits				= 0 Then intConversionFactor = 1						' Units are mm
@@ -26,7 +26,7 @@ intStartProbeDelay		= 2														' Set the amount of time in seconds you nee
 intProbeMaxTravel		= Round(120 / intConversionFactor,3)					' Maximum probe travel distance before giving up in mm if metric, inches if imperial. Default 120
 																				' Set to something around 20% less than your Z axis travel distance
 intProbeFeedRate		= Round(200 / intConversionFactor,3)					' Probing action and retract feed rate in mm per minute if metric, inches per minute is imperial. Default 200
-intZRetractHeight		= Round(50 / intConversionFactor,3)						' The distance from the work that the tool will be retracted in mm if metric, inches if imperial. Default 50
+intZRetractHeight		= Round(25 / intConversionFactor,3)						' The distance from the work that the tool will be retracted in mm if metric, inches if imperial. Default 50
 																				' MUST be greater than the value of intTouchPlateThickness or the tool will crash into the touchplate/puck
 																				' MUST be less than the distance from the RefHome Z or the mill will hit the Z limit switch before completing the action and new sero will be inaccurate
 intTouchPlateThickness	= Round(intTouchPlateThickness / intConversionFactor,3)	' Convert touchplate/puck thickness to native units
@@ -73,3 +73,4 @@ End If
 If intCurrentAbsInc		= 0 Then Code "G91"										' Reinstate G91 state
 If intCurrentGMode		= 0 Then Code "G0"										' Reinstate G0 state     
  
+
